@@ -1,7 +1,17 @@
-﻿@model asp_net_mvc_lab1.Models.BlogViewModel
+﻿@model IEnumerable<asp_net_mvc_lab1.Models.BlogArticleViewModel>
 <div class="text-center">
     <h1 class="display-4">
-        @Model.Title
+        Blog Articles
     </h1>
-    <p>@Model.Description</p>
+  
 </div>
+<ul class="list-group mt-4">
+    @foreach(var article in Model)
+    {
+        <li class="list-group-item">
+            <h5>@article.Title</h5>
+            <p class="mb-1 text-muted">@article.Description</p>
+        </li>
+    }
+
+</ul>
